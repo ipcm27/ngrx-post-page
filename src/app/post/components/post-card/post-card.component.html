@@ -1,0 +1,12 @@
+<div 
+  class="p-4 bg-white border border-gray-200 rounded-lg shadow-md cursor-pointer hover:bg-gray-50 transition duration-200 ease-in-out h-48 flex flex-col justify-start items-center"
+  (click)="onClick()"
+>
+  <h1 class="font-semibold text-indigo-600 text-center">{{ displayedProperty | titlecase }}</h1>
+  <p 
+    class="text-center text-sm font-light text-gray-800 line-clamp-6"
+  >
+    {{ displayedValue }}
+  </p>
+</div>
+
