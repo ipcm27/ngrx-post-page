@@ -7,7 +7,7 @@ It is available at the following URL: https://ipcm27.github.io/one-hundred-cards
 
 ## Overview
 
-The project demonstrates how to manage application-wide state with NgRx in a scalable way, using best practices in Angular for component structure, error handling, and testability. It serves as a clean example of integrating NgRx into an Angular application to simplify data handling and state consistency across components.
+The project demonstrates how to manage application state with NgRx in a scalable way, using best practices in Angular for component structure, error handling, and testability. It serves as a clean example of integrating NgRx into an Angular application to simplify data handling and state consistency across components.
 
 ## How it works
 
@@ -40,7 +40,7 @@ replace the title with the userId, on the next click show the id, and so on.</br
 
 <h3> Modular Component Structure: </h3> 
 <ul>
-  <li> I created two seprated components:PostPageComponent and PostCardComponent. I did like this so it would be aligned with Angular's philosophy of modular design so it can be more scalable and reusable</li>
+  <li> I created two seprated components: PostPageComponent and PostCardComponent so it would be aligned with Angular's philosophy of modular design so it can be more scalable and reusable</li>
   <li> PostCardComponent is responsible for handling each individual post. This means it only deals with the input/output of the card info and events</li>
   <li> PostPageComponent manages the collection of cards (the whole page). Its main job is to handle the page-level responsibilities by communicating with the store</li>
   <li>: This approach encapsulates the logic related to displaying individual posts within each card component </li>
