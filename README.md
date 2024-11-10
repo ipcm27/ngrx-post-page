@@ -64,10 +64,13 @@ replace the title with the userId, on the next click show the id, and so on.</br
 </ul>
 
 <h3> Error Handling: </h3> 
-  <ul>
-    <li> Error handling is done both in Effects and in the PostService. In Effects (like with loadPostsFailure), errors are caught and handled, so the app can deal with issues without crashing. </li>
-    <li> The service also has clean error handling to manage failed API calls. This approach makes it easy to show error messages or offer retry options, keeping all that logic separate from the components and keeping the code clean and manageable.</li>
+<ul>
+  <li><strong>Effect-Level Error Handling</strong>: Errors are primarily handled in the Effects layer (such as with loadPostsFailure), where errors are caught and passed along to the store. This allows the app to handle issues gracefully without crashing, making it possible to display user-friendly messages instead of silent failures.</li>
+
+<li><strong>User-Friendly Messaging:</strong> In case of an error, the application displays a clear and helpful message to the user (e.g., “Oops! Something went wrong…”). This provides immediate feedback and even suggests actions the user can take, like refreshing the page or checking back later.</li>
   </ul>
+![image](https://github.com/user-attachments/assets/6f8408d7-b0cd-412f-9b0a-1abaad1a2b25)
+
 
 
 ## Questions
