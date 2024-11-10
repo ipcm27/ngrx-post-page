@@ -69,7 +69,8 @@ replace the title with the userId, on the next click show the id, and so on.</br
 
 <li><strong>User-Friendly Messaging:</strong> In case of an error, the application displays a clear and helpful message to the user (e.g., “Oops! Something went wrong…”). This provides immediate feedback and even suggests actions the user can take, like refreshing the page or checking back later.</li>
   </ul>
-![image](https://github.com/user-attachments/assets/6f8408d7-b0cd-412f-9b0a-1abaad1a2b25)
+
+![Captura de tela 2024-11-10 140348](https://github.com/user-attachments/assets/566fb54f-2a25-43af-8c82-4a821676f3ed)
 
 
 
