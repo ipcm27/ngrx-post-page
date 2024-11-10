@@ -9,15 +9,24 @@
     <div class="mx-auto  py-10 sm:py-10 lg:py-10">
       <div class="w-full sticky top-5 bg-white shadow-md ring-1 ring-gray-900/10 hover:ring-gray-900/20 z-10">
         <div class="px-6 py-4 text-center text-md text-gray-600">
-          The current Post id is <span class="font-semibold text-indigo-600">{{ activePostId$ | async }}</span>
+          <div *ngIf="error$ | async as error" class="text-red-500 text-center p-4">
+            Oops! Something went wrong while loading the posts. Please try refreshing the page, or check back later. <br />
+            <span class="text-sm italic">{{ error }}</span>
+          </div>
+          <p *ngIf="!(error$ | async)">
+            The current Post id is <span class="font-semibold text-indigo-600">{{ activePostId$ | async }}</span>
+          </p>
+          
         </div>
       </div>
-
-      <div class="grid grid-cols-2 sm:grid-cols-5 md:grid-cols-10 gap-4 text-white p-4">
+    
+    
+      <div *ngIf="!(error$ | async)" class="grid grid-cols-2 sm:grid-cols-5 md:grid-cols-10 gap-4 text-white p-4">
         <app-post-card *ngFor="let post of posts$ | async"
-        [isActive]="post.id === activePostId"
-        [post]="post" 
-        (click)="onCardClick(post.id)"></app-post-card>
+          [isActive]="post.id === activePostId"
+          [post]="post"
+          (click)="onCardClick(post.id)">
+        </app-post-card>
       </div>
     </div>
     <div

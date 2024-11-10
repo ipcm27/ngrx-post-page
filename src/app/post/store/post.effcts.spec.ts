@@ -67,4 +67,15 @@ describe('PostsEffects', () => {
 
     expect(effects.loadPosts$).toBeObservable(expected);
   });
+
+  it('should dispatch loadPostsFailure action when posts fail to load', () => {
+    const error = 'Error loading posts';
+    const action = PostActions.loadPosts();
+    const completion = PostActions.loadPostsFailure({ error });
+
+    actions$ = hot('-a', { a: action });
+    postService.getPosts.and.returnValue(cold('-#|', {}, new Error(error)));
+
+    expect(effects.loadPosts$).toBeObservable(cold('--c', { c: completion }));
+  });
 });

@@ -1,4 +1,4 @@
-import { selectPosts, selectActivePostId, selectPostsState } from './post.selectors';
+import { selectPosts, selectActivePostId, selectPostsState, selectError } from './post.selectors';
 import { State } from './post.reducer';
 import { Post } from '../services/post.service';
 
@@ -10,7 +10,8 @@ describe('Post Selectors', () => {
 
   const initialState: State = {
     posts: mockPosts,
-    activePostId: 1
+    activePostId: 1, 
+    error: null
   };
 
   it('should select the posts state', () => {
@@ -26,6 +27,16 @@ describe('Post Selectors', () => {
   it('should select the active post ID', () => {
     const result = selectActivePostId.projector(initialState);
     expect(result).toBe(1);
+  });
+
+  it('should select the error message', () => {
+    const errorState: State = {
+      ...initialState,
+      error: 'Error loading posts'
+    };
+
+    const result = selectError.projector(errorState);
+    expect(result).toEqual('Error loading posts');
   });
 
 

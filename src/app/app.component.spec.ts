@@ -2,6 +2,8 @@ import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { PostPageComponent } from './post/components/post-page/post-page.component';
 import { StoreModule } from '@ngrx/store';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -9,7 +11,7 @@ describe('AppComponent', () => {
       imports: [
         StoreModule.forRoot({})
       ],
-      declarations: [AppComponent, PostPageComponent],
+      declarations: [AppComponent, PostPageComponent, FooterComponent, HeaderComponent],
     }).compileComponents();
   });
 
