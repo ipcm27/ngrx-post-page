@@ -36,7 +36,6 @@ replace the title with the userId, on the next click show the id, and so on.</br
 <h3> Stylling: </h3> 
 <ul>
   <li>Although I am more familair with bootstrap, I choosed to use Tailwind to be more aligned to the client's technologies. </li>
-  <li>Although the callenge asks for display as squares, I choosed to display the cards as rectangles because </li>
 </ul>
 
 <h3> Modular Component Structure with SOLID principles: </h3> 
@@ -138,6 +137,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Deploy
+The deploy was done at gitbuh pages
+npx angular-cli-ghpages --dir=dist/one-hundred-cards
 
 ## Running unit tests
 
