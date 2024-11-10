@@ -3,11 +3,17 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11 and node v22.11.0.
 It is deployed at the following URL: https://ipcm27.github.io/one-hundred-cards/
 
-![image](https://github.com/user-attachments/assets/a45d792b-e7d1-477f-9064-c5d7085ad7e1)
+desktop:
+![Captura de tela 2024-11-10 143644](https://github.com/user-attachments/assets/70d6be96-4de2-44e8-8c9d-5524bd1d81a5)
+
+mobile:<br>
+![Captura de tela 2024-11-10 143752](https://github.com/user-attachments/assets/6a04a48b-c572-4371-bba3-3031bea215a1)
+
+
 
 ## Overview
 
-The project demonstrates how to manage application state with NgRx in a scalable way, using best practices in Angular for component structure, error handling, and testability. It serves as a clean example of integrating NgRx into an Angular application to simplify data handling and state consistency across components.
+The project demonstrates how to manage application state with NgRx in a scalable way, using best practices in Angular for component structure, error handling, and testability. It serves as a clean example of integrating NgRx into a responsive Angular application.
 
 ## How it works
 
