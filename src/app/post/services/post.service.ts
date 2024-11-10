@@ -20,10 +20,7 @@ export class PostService {
   getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(this.apiUrl).pipe(
       map((posts) => posts || []), 
-      catchError((error) => {
-        console.error('Error fetching posts:', error); 
-        return of([]); 
-      })
+
     )
   }
 }

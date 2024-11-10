@@ -1,18 +1,6 @@
 <div class="bg-white">
-  <header class="absolute inset-x-0 top-0 z-50">
-    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-      <div class="flex lg:flex-1">
-        <a href="#" class="-m-1.5 p-1.5">
-          <span class="sr-only">Your Company</span>
-          <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="">
-        </a>
-      </div>
-    </nav>
-
-  </header>
-
   <div class="relative isolate px-6 pt-14 lg:px-8">
-    <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+    <div class="absolute inset-x-0 -top-60 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-96" aria-hidden="true">
       <div
         class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
         style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
@@ -21,19 +9,28 @@
     <div class="mx-auto  py-10 sm:py-10 lg:py-10">
       <div class="w-full sticky top-5 bg-white shadow-md ring-1 ring-gray-900/10 hover:ring-gray-900/20 z-10">
         <div class="px-6 py-4 text-center text-md text-gray-600">
-          The current Post id is <span class="font-semibold text-indigo-600">{{ activePostId$ | async }}</span>
+          <div *ngIf="error$ | async as error" class="text-red-500 text-center p-4">
+            Oops! Something went wrong while loading the posts. Please try refreshing the page, or check back later. <br />
+            <span class="text-sm italic">{{ error }}</span>
+          </div>
+          <p *ngIf="!(error$ | async)">
+            The current Post id is <span class="font-semibold text-indigo-600">{{ activePostId$ | async }}</span>
+          </p>
+          
         </div>
       </div>
-
-      <div class="grid grid-cols-2 sm:grid-cols-5 md:grid-cols-10 gap-4 text-white p-4">
+    
+    
+      <div *ngIf="!(error$ | async)" class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-4 text-white p-4">
         <app-post-card *ngFor="let post of posts$ | async"
-        [isActive]="post.id === activePostId"
-        [post]="post" 
-        (click)="onCardClick(post.id)"></app-post-card>
+          [isActive]="post.id === activePostId"
+          [post]="post"
+          (click)="onCardClick(post.id)">
+        </app-post-card>
       </div>
     </div>
     <div
-      class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+      class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-60rem)]"
       aria-hidden="true">
       <div
         class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"

@@ -11,12 +11,16 @@ import { EffectsModule } from '@ngrx/effects';
 import { PostsEffects } from './post/store/post.effects';
 import { PostPageComponent } from './post/components/post-page/post-page.component';
 import { PostCardComponent } from './post/components/post-card/post-card.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostPageComponent,
-    PostCardComponent  
+    PostCardComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

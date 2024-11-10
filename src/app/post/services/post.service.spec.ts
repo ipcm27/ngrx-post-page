@@ -56,17 +56,4 @@ describe('PostService', () => {
     req.flush([]); 
   });
   
-  it('should handle HTTP error gracefully', () => {
-    const errorMsg = 'Failed to load posts';
-  
-    service.getPosts().subscribe({
-      next: (posts) => {
-        expect(posts).toEqual([]);
-      },
-      error: () => fail('Expected empty array, not an error')
-    });
-  
-    const req = httpMock.expectOne(service['apiUrl']);
-    req.flush(errorMsg, { status: 500, statusText: 'Server Error' });
-  });
 });

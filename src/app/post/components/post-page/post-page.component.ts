@@ -17,9 +17,11 @@ export class PostPageComponent implements OnInit{
   posts$: Observable<Post[]>;
   activePostId$: Observable<number | null>;
   activePostId: number = 0;
+  error$: Observable<string | null>;
 
   constructor(private store: Store) {
     this.posts$ = this.store.select(Selectors.selectPosts);
+    this.error$ = this.store.select(Selectors.selectError);
     this.activePostId$ = this.store.select(Selectors.selectActivePostId);
   }
 

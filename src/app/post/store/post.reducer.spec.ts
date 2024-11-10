@@ -31,4 +31,13 @@ describe('PostsReducer', () => {
     expect(state.activePostId).toBe(postId);
     expect(state.posts).toEqual([]);
   });
+
+  it('should set error on loadPostsFailure action', () => {
+    const errorMessage = 'Error loading posts';
+    const action = PostPageActions.loadPostsFailure({ error: errorMessage });
+    const state = postsReducer(initialState, action);
+
+    expect(state.error).toEqual(errorMessage);
+    expect(state.posts).toEqual([]);
+  });
 });

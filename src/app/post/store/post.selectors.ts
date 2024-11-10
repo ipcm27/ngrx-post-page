@@ -14,3 +14,8 @@ export const selectActivePostId = createSelector(
   (state: State) => state.activePostId
 );
 
+export const selectError= createSelector(
+  selectPostsState,
+  (state: State) => state.error
+);
+

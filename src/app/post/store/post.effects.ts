@@ -15,7 +15,6 @@ export class PostsEffects {
       switchMap(() =>
         this.postService.getPosts().pipe(
           map(posts => {
-            console.log('Posts carregados:', posts);
             return PostPageActions.loadPostsSuccess({ posts });
           }),
           catchError(error => {
