@@ -9,5 +9,5 @@ import { PostPageComponent } from './post/components/post-page/post-page.compone
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'hundred-cards';
+  title = 'one-hundred-cards';
 }
